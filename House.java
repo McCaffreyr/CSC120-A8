@@ -10,7 +10,7 @@ public class House extends Building{
   private boolean hasElevator;
 
   /**
-   * Constructor for the House Class
+   * Complete constructor for the House Class
    * @param name name of house
    * @param address address of house
    * @param nFloors number of floors in house
@@ -79,7 +79,10 @@ public class House extends Building{
     System.out.println("You have built a house: 🏠");
   }
   
-
+  /**
+   * Moves person to a specfic floor
+   * @param floorNum intended floor number to travel to
+   */
   public void goToFloor(int floorNum) {
     if (hasElevator){
       if (this.activeFloor == -1) {
@@ -148,12 +151,15 @@ public class House extends Building{
   /**
    * Says whether a student is a resident of a house
    * @param s student in question
-   * @return T/F if they are a hosue resident
+   * @return T/F if they are a house resident
    */
   public boolean isResident(Student s){
     return residents.contains(s);
   }
 
+  /**
+   * Gives command options
+   */
   public void showOptions() {
     super.showOptions();
     System.out.println("moveIn()\n + moveOut()\n + isResident()");

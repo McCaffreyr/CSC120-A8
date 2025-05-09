@@ -60,6 +60,10 @@ public class Library extends Building {
       this.collection = new Hashtable<>();
     }
 
+    /**
+     * Moves person to a different floor
+     * @param floorNum intended floor to go to
+     */
     public void goToFloor(int floorNum) {
       if (hasElevator){
         if (this.activeFloor == -1) {
@@ -157,7 +161,9 @@ public class Library extends Building {
       }
     }
 
-    //don't actually copy what you just copied super it from building
+    /**
+     * Gives command options
+     */
     public void showOptions() {
       super.showOptions();
       System.out.println("checkOut()\n + addTitle()\n + removeTitle()\n + returnBook()\n + containsTitle()\n + isAvailable()\n + printCollection()");

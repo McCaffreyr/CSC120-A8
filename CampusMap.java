@@ -4,7 +4,9 @@ public class CampusMap {
 
     ArrayList<Building> buildings;
 
-    /* Default constructor, initializes empty ArrayList */
+    /**
+     * Default constructor, initializes empty ArrayList
+     */
     public CampusMap() {
         buildings = new ArrayList<Building>();
     }
@@ -31,6 +33,10 @@ public class CampusMap {
         return b;
     }
 
+    /**
+     * Shows the building options
+     * @return list of buildings in the map
+     */
     public String toString() {
         String mapString = "DIRECTORY of BUILDINGS";
 
@@ -44,7 +50,6 @@ public class CampusMap {
         CampusMap myMap = new CampusMap();
         myMap.addBuilding(new Building("Ford Hall", "100 Green Street, Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court, Northampton, MA 01063", 4));
-
         myMap.addBuilding(new Building("Albright", "9 Bedford Terrace, Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Stoddard"));
         myMap.addBuilding(new Building("CC", "100 Elm St, Northampton, MA 01063"));
@@ -64,7 +69,7 @@ public class CampusMap {
 
         Cafe Compass = new Cafe("Compass", "7 College Lane", 2);
         Compass.sellCoffee(12, 1);
-        System.out.println(Compass.stockcount());
+        System.out.println(Compass.stockCount());
 
         House Albright = new House("Albright","7 Bedford Terrace", 4, false, false);
         Student abby = new Student("Abby","991473910",2028);

@@ -3,31 +3,38 @@
 /* This is a stub for the Cafe class */
 
 public class Cafe extends Building{
-
     private int nCoffeeOunces; // The number of ounces of coffee remaining in inventory
     private int nSugarPackets; // The number of sugar packets remaining in inventory
     private int nCreams; // The number of "splashes" of cream remaining in inventory
     private int nCups; // The number of cups remaining in inventory
 
-
-    /* Default constructor */
+    /**
+     * Default constructor for Cafe class
+     */
     public Cafe() {
         this("<Name Unknown>", "<Address Unknown>", 1);
     }
 
-    /* Overloaded constructor with address only */
+    /**
+     * Constructor for Cafe class with address only
+     * @param address address of cafe
+     */
     public Cafe(String address) {
-        this(); // Call default constructor
+        this();
         this.address = address; // Override address
     }
 
-    /* Overloaded constructor with name, address */
+    /**
+     * Constructor for Cafe class with address and name
+     * @param name name of Cafe
+     * @param address address of Cafe
+     */
     public Cafe(String name, String address) {
         this(name, address, 1); // Call full constructor with hard-coded # floors
     }
 
     /**
-     * Constructor for the Cafe Class
+     * Complete constructor for the Cafe Class
      * @param name name of cafe
      * @param address address of cafe
      * @param nFloors number of floors in cafe
@@ -41,11 +48,15 @@ public class Cafe extends Building{
         nCups = 30;
     }
     
+    /**
+     * Attempts to change floors
+     * @param floorNum intended floor number to go to
+     */
     public void goToFloor(int floorNum) {
-        if ((this.activeFloor - floorNum) < 2 && (this.activeFloor - floorNum) > -2){
-            this.activeFloor = floorNum;
+        if (floorNum == 1) {
+            System.out.println("You are already on this floor");
         }else{
-            System.out.println("You can't skip floors without an elevator. Travel one floor at a time.");
+            System.out.println("Unfortunatly, that floor is only for employees");
         }
     }
 
@@ -100,11 +111,14 @@ public class Cafe extends Building{
      * Shows current inventory
      * @return string giving current inventory of coffee oz, sugar packets, creams, cups
      */
-    public String stockcount(){
+    public String stockCount(){
         return "coffee ounces: " + nCoffeeOunces + ", sugar packets: " + nSugarPackets
          + ", cream: " + nCreams + ", cups: " + nCups;
     }
 
+    /**
+     * Shows the movement/action options
+     */
     public void showOptions() {
         System.out.println("Available options at " + this.name + ":\n + enter() \n + exit() \n + sellCoffee()");
     }
@@ -112,11 +126,12 @@ public class Cafe extends Building{
     public static void main(String[] args) {
         Cafe Compass = new Cafe("Compass", "7 College Lane", 2);
 
-        System.out.println(Compass.stockcount());
+        System.out.println(Compass.stockCount());
         Compass.sellCoffee(12, 1, 1);
-        System.out.println(Compass.stockcount());
+        System.out.println(Compass.stockCount());
         Compass.restock(12, 1, 1, 1);
-        System.out.println(Compass.stockcount());
+        System.out.println(Compass.stockCount());
+        Compass.showOptions();
 
 
 
